@@ -18,7 +18,7 @@ import java.util.concurrent.locks.Lock;
 public class RedisController {
 
     @Resource
-    private StringRedisTemplate redisTemplate;
+    private StringRedisTemplate stringRedisTemplate;
 
     @Resource
     private RedisLockRegistry redisLockRegistry;
