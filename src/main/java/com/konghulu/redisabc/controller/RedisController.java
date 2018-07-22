@@ -18,7 +18,7 @@ import java.util.concurrent.locks.Lock;
 public class RedisController {
 
     @Resource
-    private RedisTemplate<String, String> redisTemplate;
+    private StringRedisTemplate redisTemplate;
 
     @Resource
     private RedisLockRegistry redisLockRegistry;
@@ -39,10 +39,5 @@ public class RedisController {
             lock.unlock();
         }
         return true;
-    }
-
-    @Bean
-    public RedisTemplate<String, String> getRedisTemplate(RedisConnectionFactory factory) {
-        return new StringRedisTemplate(factory);
     }
 }
